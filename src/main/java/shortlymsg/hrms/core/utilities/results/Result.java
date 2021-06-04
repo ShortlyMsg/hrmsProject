@@ -1,4 +1,4 @@
-package shortlymsg.hrms.core.utilities.results;
+ package shortlymsg.hrms.core.utilities.results;
 
 public class Result {
 	private boolean success;

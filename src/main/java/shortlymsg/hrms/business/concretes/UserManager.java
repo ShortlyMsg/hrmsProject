@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import shortlymsg.hrms.business.abstracts.UserService;
+import shortlymsg.hrms.core.utilities.results.DataResult;
+import shortlymsg.hrms.core.utilities.results.Result;
+import shortlymsg.hrms.core.utilities.results.SuccessDataResult;
+import shortlymsg.hrms.core.utilities.results.SuccessResult;
 import shortlymsg.hrms.dataAccess.abstracts.UserDao;
 import shortlymsg.hrms.entities.concretes.User;
 
@@ -19,13 +23,19 @@ public class UserManager implements UserService {
 		super();
 		this.userDao = userDao;
 	}
-
-
 	
 	@Override
-	public List<User> getAll() {
+	public DataResult<List<User>> getAll() {
 
-		return this.userDao.findAll();
+		return new SuccessDataResult<List<User>>
+		(this.userDao.findAll(),"Data listelendi");
+			
+	}
+
+	@Override
+	public Result add(User user) {
+		this.userDao.save(user);
+		return new SuccessResult("Kullanıcı eklendi");
 	}
 
 }

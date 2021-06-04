@@ -8,29 +8,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import shortlymsg.hrms.business.abstracts.EmployeeService;
+import shortlymsg.hrms.business.abstracts.CityService;
 import shortlymsg.hrms.core.utilities.results.DataResult;
 import shortlymsg.hrms.core.utilities.results.Result;
-import shortlymsg.hrms.entities.concretes.Employee;
+import shortlymsg.hrms.entities.concretes.City;
 
 @RestController
-@RequestMapping("/api/employees")
-public class EmployeesController {
+@RequestMapping("/api/cities")
+public class CitiesController {
 	
-	private EmployeeService employeeService;
+	private CityService cityService;
 
-	public EmployeesController(EmployeeService employeeService) {
+	public CitiesController(CityService cityService) {
 		super();
-		this.employeeService = employeeService;
+		this.cityService = cityService;
 	}
 	
 	@GetMapping("/getall")
-	public DataResult<List<Employee>> getAll(){
-		return this.employeeService.getAll();
+	public DataResult<List<City>> getAll(){
+		return this.cityService.getAll();
 	}
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody Employee employee) {
-		return this.employeeService.add(employee);
+	public Result add(@RequestBody City city) {
+		return this.cityService.add(city);
 	}
 }

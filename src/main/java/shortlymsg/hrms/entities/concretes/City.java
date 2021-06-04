@@ -10,10 +10,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "users")
+@Table(name="cities")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class City {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
@@ -21,13 +22,7 @@ public class User {
 	@Column(name="id")
 	private int id;
 	
-	
 	@NotNull
-	@Column(name= "email")
-	private String email;
-	
-	
-	@NotNull
-	@Column(name= "password")
-	private String password;
+	@Column(name="city")
+	private String city;
 }
