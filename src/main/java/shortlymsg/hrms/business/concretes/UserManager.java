@@ -28,14 +28,14 @@ public class UserManager implements UserService {
 	public DataResult<List<User>> getAll() {
 
 		return new SuccessDataResult<List<User>>
-		(this.userDao.findAll(),"Data listelendi");
+		(this.userDao.findAll(),"Data listed");
 			
 	}
 
 	@Override
 	public Result add(User user) {
 		this.userDao.save(user);
-		return new SuccessResult("Kullanıcı eklendi");
+		return new SuccessResult("User added");
 	}
 
 }

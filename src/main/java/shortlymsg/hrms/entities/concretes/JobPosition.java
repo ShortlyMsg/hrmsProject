@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="job_positions")
 public class JobPosition {
 	
 	@Id

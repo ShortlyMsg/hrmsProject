@@ -13,11 +13,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="candidates")
-@PrimaryKeyJoinColumn(name="id", referencedColumnName = "id")
-@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
+@PrimaryKeyJoinColumn(name = "id")
+@EqualsAndHashCode(callSuper = false)
+@Table(name="candidates")
+
 public class Candidate extends User{
 	
 	@Id

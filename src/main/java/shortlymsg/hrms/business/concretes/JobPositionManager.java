@@ -30,7 +30,7 @@ public class JobPositionManager implements JobPositionService {
 	@Override
 	public DataResult<List<JobPosition>> getAll() {
 		return new SuccessDataResult<List<JobPosition>>
-		(this.jobPositionDao.findAll(),"Data listelendi");
+		(this.jobPositionDao.findAll(),"Data listed");
 	}
 
 
@@ -38,7 +38,7 @@ public class JobPositionManager implements JobPositionService {
 	@Override
 	public Result add(JobPosition jobPosition) {
 		this.jobPositionDao.save(jobPosition);
-		return new SuccessResult("İş pozisyonu eklendi");
+		return new SuccessResult("Job position added");
 	}
 
 }

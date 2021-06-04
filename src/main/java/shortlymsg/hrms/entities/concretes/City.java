@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="cities")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="cities")
+
 public class City {
 	
 	@Id
