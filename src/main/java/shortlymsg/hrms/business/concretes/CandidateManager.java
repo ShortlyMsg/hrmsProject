@@ -27,14 +27,14 @@ public class CandidateManager implements CandidateService {
 	@Override
 	public DataResult<List<Candidate>> getAll() {
 		return new SuccessDataResult<List<Candidate>>
-		(this.candidateDao.findAll(),"Data Listelendi");
+		(this.candidateDao.findAll(),"Data Listed");
 	}
 
 
 	@Override
 	public Result add(Candidate candidate) {
 		this.candidateDao.save(candidate);
-		return new SuccessResult("Aday Eklendi");
+		return new SuccessResult("Candidate(aday) added");
 	}
 	
 }

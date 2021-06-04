@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+//@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "users")
+
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
